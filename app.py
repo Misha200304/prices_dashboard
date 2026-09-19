@@ -11,9 +11,16 @@ st.set_page_config(page_title="Commodity Prices Dashboard", layout="wide")
 
 
 def get_sheet_url() -> str | None:
-    if "GOOGLE_SHEET_CSV_URL" in st.secrets:
-        return str(st.secrets["GOOGLE_SHEET_CSV_URL"])
-    return os.getenv("GOOGLE_SHEET_CSV_URL")
+    env_url = os.getenv("GOOGLE_SHEET_CSV_URL")
+    if env_url:
+        return env_url
+
+    try:
+        secret_url = st.secrets.get("GOOGLE_SHEET_CSV_URL")
+    except Exception:
+        return None
+
+    return str(secret_url) if secret_url else None
 
 
 @st.cache_data(ttl=300)
