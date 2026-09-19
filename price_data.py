@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pandas as pd
 
 CANONICAL_COLUMNS = [
@@ -68,3 +70,43 @@ def monthly_prices(df: pd.DataFrame) -> pd.DataFrame:
         .reset_index(drop=True)
     )
     return result
+
+
+def load_live_sheet(sheet_url: str) -> pd.DataFrame:
+    return normalize_prices(pd.read_csv(sheet_url))
+
+
+def load_repository_data(data_dir: str | Path = "data") -> pd.DataFrame:
+    root = Path(data_dir)
+    frames: list[pd.DataFrame] = []
+
+    for path in sorted(root.glob("*.csv")):
+        frames.append(pd.read_csv(path))
+
+    for path in sorted(root.glob("*.xlsx")):
+        try:
+            workbook = pd.read_excel(path, sheet_name=None)
+        except Exception:
+            continue
+        for frame in workbook.values():
+            if isinstance(frame, pd.DataFrame) and (
+                "Date" in frame.columns or {"Year", "Month"}.issubset(frame.columns)
+            ):
+                frames.append(frame)
+
+    return combine_price_frames(frames)
+
+
+def load_prices(
+    sheet_url: str | None,
+    data_dir: str | Path = "data",
+) -> tuple[pd.DataFrame, str]:
+    if sheet_url:
+        try:
+            live = load_live_sheet(sheet_url)
+            if not live.empty:
+                return live, "google_sheets"
+        except Exception:
+            pass
+
+    return load_repository_data(data_dir), "repository_backup"
