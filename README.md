@@ -1,6 +1,6 @@
 # prices_dashboard
 
-Streamlit dashboard for commodity prices, currently backed by the Urea and Sulfur data in `data/`.
+Streamlit dashboard for commodity prices stored directly in this GitHub repository.
 
 ## Run locally
 
@@ -9,32 +9,45 @@ python3 -m pip install -r requirements.txt
 python3 -m streamlit run app.py
 ```
 
-## Live Google Sheets data
+## Add today's prices
 
-The preferred live data source is a Google Sheet with these columns:
+Run:
 
-| Date | Commodity | Price | Unit | Source | Retrieved_At |
-|---|---|---:|---|---|---|
-| 2026-09-19 | Urea | 450.25 | USD/T | Trading Economics | 2026-09-19T15:00:00 |
+```bash
+python3 add_today_prices.py
+```
 
-The dashboard also accepts rows that use `Year` and `Month` instead of `Date`.
+The script asks for:
 
-For a Sheet that can be read through a CSV export URL, use:
+- Date (press Enter to use today's date)
+- Urea price in USD/T
+- Sulfur price in CNY/T
+
+It writes two Excel files:
+
+- `data/commodity_prices.xlsx` — master history that keeps all entered dates
+- `data/latest_prices.xlsx` — only the rows entered in the latest run
+
+If you enter the same date again, the script replaces that date's Urea/Sulfur values instead of creating duplicates.
+
+Example:
 
 ```text
-https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv&gid=0
+Date [2026-09-19]:
+Urea price (USD/T): 451.25
+Sulfur price (CNY/T): 7687.33
 ```
 
-Copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml` and set:
+Then push the updated Excel files to GitHub:
 
-```toml
-GOOGLE_SHEET_CSV_URL = "YOUR_GOOGLE_SHEET_CSV_URL"
+```bash
+git add data/commodity_prices.xlsx data/latest_prices.xlsx
+git commit -m "data: update commodity prices"
+git push
 ```
 
-Do not commit `.streamlit/secrets.toml`.
+The dashboard reads compatible CSV/XLSX files from `data/`, combines them, and deduplicates overlapping observations by commodity, date, and unit.
 
-After adding a new row to the Sheet, click **Refresh data** in the dashboard or allow the 5-minute cache to expire. No GitHub commit is needed for ordinary price updates.
+## Dashboard refresh
 
-## Backup data
-
-If Google Sheets is unavailable or not configured, the app loads compatible CSV/XLSX files from `data/` and deduplicates overlapping observations.
+After updating the repository data, restart Streamlit or click **Refresh data** in the dashboard. The app caches data for up to five minutes.
