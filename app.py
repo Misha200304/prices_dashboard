@@ -1,35 +1,20 @@
 from __future__ import annotations
 
-import os
-
 import pandas as pd
 import streamlit as st
 
-from price_data import load_prices, monthly_prices
+from price_data import load_repository_data, monthly_prices
 
 st.set_page_config(page_title="Commodity Prices Dashboard", layout="wide")
 
 
-def get_sheet_url() -> str | None:
-    try:
-        value = st.secrets.get("GOOGLE_SHEET_CSV_URL")
-        if value:
-            return str(value)
-    except Exception:
-        pass
-    value = os.getenv("GOOGLE_SHEET_CSV_URL")
-    return value or None
-
-
 @st.cache_data(ttl=300)
-def cached_prices(sheet_url: str | None):
-    return load_prices(sheet_url, "data")
+def cached_prices():
+    return load_repository_data("data")
 
 
 st.title("Commodity Prices Dashboard")
-st.caption(
-    "Commodity price monitoring with Google Sheets live sync and repository backup data."
-)
+st.caption("Commodity price monitoring using data stored in this GitHub repository.")
 
 controls_left, controls_right = st.columns([1, 4])
 with controls_left:
@@ -37,16 +22,10 @@ with controls_left:
         st.cache_data.clear()
         st.rerun()
 
-prices, data_source = cached_prices(get_sheet_url())
+prices = cached_prices()
 
 with controls_right:
-    if data_source == "google_sheets":
-        st.success("Using live Google Sheets data.")
-    else:
-        st.warning(
-            "Live Google Sheets data is unavailable or not configured. "
-            "Using repository backup data."
-        )
+    st.info("Data source: GitHub repository files in data/")
 
 if prices.empty:
     st.warning("No valid price observations are available.")
