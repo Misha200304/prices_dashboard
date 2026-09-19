@@ -55,7 +55,11 @@ def update_excel_files(
     else:
         history = pd.DataFrame(columns=new_rows.columns)
 
-    combined = pd.concat([history, new_rows], ignore_index=True)
+    if history.empty:
+        combined = new_rows.copy()
+    else:
+        combined = pd.concat([history, new_rows], ignore_index=True)
+
     combined["Date"] = pd.to_datetime(combined["Date"], errors="coerce")
     combined["Price"] = pd.to_numeric(combined["Price"], errors="coerce")
     combined = combined.dropna(subset=["Date", "Commodity", "Price", "Unit"])
