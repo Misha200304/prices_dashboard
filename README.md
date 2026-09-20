@@ -2,24 +2,16 @@
 
 Streamlit dashboard for commodity prices stored directly in this GitHub repository.
 
-## Update today's prices
+## Daily price update workflow
 
-From the repository on the `main` branch, run:
+From the repository on the `main` branch, run these two commands in this order:
 
 ```bash
+git pull
 python3 add_today_prices.py
 ```
 
-Enter the date, Urea price, and Sulfur price. The script will automatically:
-
-1. update `data/commodity_prices.xlsx` (full manual history)
-2. update `data/latest_prices.xlsx` (latest entered date)
-3. commit only those two data files
-4. pull/rebase if GitHub `main` moved
-5. push the price update to GitHub `main`
-6. trigger Streamlit Cloud to redeploy from the updated repository
-
-If the same date is entered again, that date's manual values are replaced instead of duplicated.
+Then enter the date, Urea price, and Sulfur price.
 
 Example:
 
@@ -29,6 +21,35 @@ Urea price (USD/T): 459.60
 Sulfur price (CNY/T): 7669
 ```
 
+After you enter the prices, the script automatically:
+
+1. updates `data/commodity_prices.xlsx` with the full manual history
+2. updates `data/latest_prices.xlsx` with the latest entered prices
+3. commits only those two price files
+4. rebases automatically if GitHub `main` changed
+5. pushes the new price data to GitHub `main`
+6. triggers Streamlit Cloud to redeploy from the updated GitHub repository
+
+You do **not** need to run `git add`, `git commit`, `git push`, or another `git pull` after entering the prices.
+
+The workflow is therefore:
+
+```text
+git pull
+   ↓
+python3 add_today_prices.py
+   ↓
+enter Urea + Sulfur prices
+   ↓
+Excel files update automatically
+   ↓
+GitHub main updates automatically
+   ↓
+Streamlit Cloud redeploys automatically
+   ↓
+Dashboard shows the newest date and prices
+```
+
 When the script finishes successfully, look for:
 
 ```text
@@ -36,11 +57,23 @@ GitHub sync: pushed to main successfully.
 Streamlit Cloud will redeploy from the new GitHub data automatically.
 ```
 
-The dashboard gives manual data explicit priority over legacy backup files for the same commodity/date/unit, so the newly entered date and price are used in the KPI cards, current-month chart, and data tables.
+If the same date is entered again, that date's manual values are replaced instead of duplicated.
 
-## Pull the latest code
+The dashboard gives manual price data priority over the older backup CSV/XLSX files for the same commodity/date/unit. This means the newest manually entered date and price are used throughout the dashboard, including:
 
-If needed:
+- Latest Price KPI
+- Previous Price KPI
+- Current Month Average
+- Current Month High / Low
+- Current Month chart
+- Latest observation date
+- Data tables
+
+After the GitHub push, Streamlit Cloud may need a short time to redeploy. Refresh the deployed dashboard after the redeploy completes.
+
+## Pull the latest code manually
+
+If you ever need to make sure your local copy has the newest code:
 
 ```bash
 git switch main
@@ -67,12 +100,13 @@ Local URL:
 http://localhost:8501
 ```
 
-## Normal daily workflow
+## Normal daily routine
 
-Most days there is now only one command:
+Most days, use only:
 
 ```bash
+git pull
 python3 add_today_prices.py
 ```
 
-After the automatic GitHub push, Streamlit Cloud may take a short time to redeploy. Refresh the deployed dashboard after the redeploy completes.
+That is the complete daily workflow.
