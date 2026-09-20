@@ -115,7 +115,15 @@ def load_repository_data(data_dir: str | Path = "data") -> pd.DataFrame:
         except Exception:
             continue
 
-    for path in sorted(root.glob("*.xlsx")):
+    def excel_priority(path: Path) -> tuple[int, str]:
+        name = path.name.lower()
+        if name == "latest_prices.xlsx":
+            return (2, name)
+        if name == "commodity_prices.xlsx":
+            return (1, name)
+        return (0, name)
+
+    for path in sorted(root.glob("*.xlsx"), key=excel_priority):
         try:
             workbook = pd.read_excel(path, sheet_name=None)
         except Exception:
