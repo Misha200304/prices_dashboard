@@ -2,7 +2,90 @@
 
 Streamlit dashboard for commodity prices stored directly in this GitHub repository.
 
-## Daily price update workflow
+## Dashboards
+
+The Streamlit app now has two data views:
+
+- **Commodity Prices Dashboard** — existing Urea and Sulfur monitoring.
+- **USDA Fertilizer Prices** — automated USDA AMS Production Cost data with product and reporting-region filters.
+
+The USDA page supports Urea, DAP, MAP, Potash, Ammonium Sulfate, Anhydrous Ammonia, Ammonium Nitrate, ATS, and UAN concentrations when those products are present in USDA reports.
+
+## USDA fertilizer automation
+
+USDA data is collected from the MyMarketNews MARS API and stored in:
+
+```text
+data/usda_fertilizer_prices.csv
+```
+
+The collector checks the current USDA Production Cost reports for Alabama, Illinois, Maryland, Inter-Mountain West, Iowa, North Carolina, Oklahoma, Pacific Northwest, Pennsylvania, and South Carolina. It keeps regional observations separate and deduplicates on date + region + fertilizer + unit.
+
+### Local setup
+
+Create your private environment file once:
+
+```bash
+cp .env.example .env
+```
+
+Then open `.env` and replace the placeholder:
+
+```text
+USDA_API_KEY=your_real_key_here
+```
+
+`.env` is ignored by Git and must never be committed.
+
+Install dependencies:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+Fetch/update USDA fertilizer data:
+
+```bash
+python3 fetch_usda_prices.py
+```
+
+By default the script requests the most recent 60 days from each report, merges them with existing history, and replaces matching regional observations rather than duplicating them.
+
+To request a wider window:
+
+```bash
+python3 fetch_usda_prices.py --days 180
+```
+
+### GitHub Actions automation
+
+The workflow `.github/workflows/update_usda_fertilizer.yml` runs once per day and can also be started manually from the Actions tab.
+
+Before the workflow can call USDA, add a repository Actions secret named exactly:
+
+```text
+USDA_API_KEY
+```
+
+The workflow then:
+
+```text
+GitHub Actions
+   ↓
+USDA MyMarketNews API
+   ↓
+fetch_usda_prices.py
+   ↓
+data/usda_fertilizer_prices.csv
+   ↓
+commit only when data changed
+   ↓
+Streamlit redeploys from GitHub
+```
+
+Scheduled GitHub Actions workflows run from the repository default branch, so the daily schedule becomes active after this feature is merged to `main`.
+
+## Daily manual Urea + Sulfur workflow
 
 From the repository on the `main` branch, run these two commands in this order:
 
@@ -99,14 +182,3 @@ Local URL:
 ```text
 http://localhost:8501
 ```
-
-## Normal daily routine
-
-Most days, use only:
-
-```bash
-git pull
-python3 add_today_prices.py
-```
-
-That is the complete daily workflow.
