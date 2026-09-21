@@ -2,11 +2,11 @@ from pathlib import Path
 
 import pandas as pd
 
+from usda_auth import validate_api_key
 from usda_fertilizer import (
     extract_price_rows,
     merge_history,
     normalize_product,
-    validate_api_key,
 )
 
 
