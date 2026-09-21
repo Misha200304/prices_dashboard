@@ -6,6 +6,7 @@ from usda_fertilizer import (
     extract_price_rows,
     merge_history,
     normalize_product,
+    validate_api_key,
 )
 
 
@@ -137,3 +138,38 @@ def test_merge_history_replaces_same_region_product_date_without_duplicates(tmp_
     assert len(merged) == 1
     assert merged.iloc[0]["Price"] == 897.5
     assert merged.iloc[0]["Retrieved_At"] == "2026-09-21T16:00:00"
+
+
+class _FakeResponse:
+    def __init__(self, status_code: int):
+        self.status_code = status_code
+
+    def raise_for_status(self):
+        if self.status_code >= 400:
+            raise RuntimeError(f"HTTP {self.status_code}")
+
+
+class _FakeSession:
+    def __init__(self, status_code: int):
+        self.status_code = status_code
+        self.calls = []
+
+    def get(self, url, **kwargs):
+        self.calls.append((url, kwargs))
+        return _FakeResponse(self.status_code)
+
+
+def test_validate_api_key_reports_401_as_credentials_problem():
+    session = _FakeSession(401)
+
+    try:
+        validate_api_key(session, "example-key")
+    except RuntimeError as exc:
+        message = str(exc)
+    else:
+        raise AssertionError("Expected invalid USDA credentials to raise RuntimeError")
+
+    assert "401" in message
+    assert "USDA_API_KEY" in message
+    assert "MyMarketNews" in message
+    assert session.calls[0][1]["auth"] == ("example-key", "")
