@@ -71,6 +71,31 @@ The dashboard gives manual price data priority over the older backup CSV/XLSX fi
 
 After the GitHub push, Streamlit Cloud may need a short time to redeploy. Refresh the deployed dashboard after the redeploy completes.
 
+## Fertilizer prices (FertilizerPrice.com)
+
+A second dataset lives in `data/fertilizer_prices.csv`. It is a single consolidated, global series per fertilizer scraped from FertilizerPrice.com — no regional breakdowns. Every row uses the schema:
+
+```text
+Date,Commodity,Price,Unit,Source,Retrieved_At
+2026-09-18,Urea,907.80,USD/short ton,FertilizerPrice.com,2026-09-21T00:00:00
+```
+
+Products in the dropdown (all in `USD/short ton`): Urea, UAN 28%, UAN 32%, Anhydrous Ammonia, DAP, MAP, Potash, AMS, Liquid Phosphate. A product only appears in the dropdown once it has at least one observation, so Liquid Phosphate (which had no published data when scraped) will show up after the first price is entered for it.
+
+This dataset is intentionally kept separate from the Trading Economics Urea series. The deduplication key is `Commodity + Date + Unit`, and the two Urea series use different units (`USD/short ton` vs `USD/T`), so they never collide or overwrite each other. Missing weeks are left as gaps — no values are fabricated.
+
+The dashboard needs no code changes to show this data. It auto-populates the commodity dropdown from whatever is loaded from `data/`, and the sidebar Unit filter separates the two Urea series.
+
+### Weekly fertilizer update workflow
+
+```bash
+python3 add_fertilizer_prices.py
+```
+
+It asks for one date, then prompts for each fertilizer's price in `USD/short ton`. Press **Enter** to skip a product that has no new price. Re-entering the same `Date + Commodity + Unit` replaces the existing observation instead of duplicating it.
+
+This script only updates `data/fertilizer_prices.csv` locally. It does **not** commit or push — inspect the diff and commit manually.
+
 ## Pull the latest code manually
 
 If you ever need to make sure your local copy has the newest code:
