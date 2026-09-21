@@ -2,7 +2,15 @@ from pathlib import Path
 
 import pandas as pd
 
-from add_fertilizer_prices import build_weekly_rows, update_fertilizer_history
+from add_fertilizer_prices import (
+    PRODUCTS,
+    build_weekly_rows,
+    update_fertilizer_history,
+)
+
+
+def test_weekly_updater_includes_all_trends_products():
+    assert "Liquid Phosphate 10-34-0" in PRODUCTS
 
 
 def test_build_weekly_rows_keeps_only_entered_products():
