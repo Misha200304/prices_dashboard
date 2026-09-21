@@ -19,6 +19,7 @@ PRODUCTS = [
     "MAP",
     "Potash (MOP)",
     "Ammonium Sulfate (AMS)",
+    "Liquid Phosphate 10-34-0",
 ]
 
 
