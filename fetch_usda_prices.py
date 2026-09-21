@@ -4,8 +4,10 @@ import argparse
 import os
 from pathlib import Path
 
+import requests
 from dotenv import load_dotenv
 
+from usda_auth import validate_api_key
 from usda_fertilizer import DEFAULT_OUTPUT, fetch_all_reports, merge_history
 
 
@@ -28,7 +30,9 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
-    load_dotenv()
+    # Local .env should win over a stale shell/Codespaces environment variable.
+    # GitHub Actions has no committed .env, so its USDA_API_KEY secret still works normally.
+    load_dotenv(override=True)
     args = parse_args()
 
     api_key = os.getenv("USDA_API_KEY", "").strip()
@@ -38,8 +42,15 @@ def main() -> None:
             "or set USDA_API_KEY in the environment."
         )
 
+    session = requests.Session()
+    validate_api_key(session, api_key)
+
     output = Path(args.output)
-    fetched = fetch_all_reports(api_key=api_key, days=args.days)
+    fetched = fetch_all_reports(
+        api_key=api_key,
+        days=args.days,
+        session=session,
+    )
     history = merge_history(fetched, output)
 
     newest = history["Date"].max().date().isoformat() if not history.empty else "N/A"
