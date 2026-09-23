@@ -2,83 +2,69 @@
 
 Streamlit dashboard for commodity prices stored directly in this GitHub repository.
 
-## Daily price update workflow
+The dashboard now combines the existing Urea/Sulfur data with a simple FertilizerPrice.com weekly history file. There is no USDA API, API key, `.env`, scraper, or scheduled fertilizer job.
 
-From the repository on the `main` branch, run these two commands in this order:
+## FertilizerPrice history
+
+`data/fertilizerprice_history.csv` contains the national weekly fertilizer averages that FertilizerPrice.com publicly published in its market reports within the current one-year window. The public weekly report series currently starts on April 3, 2026, so no earlier weekly values were invented to fill the chart.
+
+Tracked products are:
+
+- Urea
+- UAN 28%
+- UAN 32%
+- Anhydrous Ammonia
+- DAP
+- MAP
+- Potash (MOP)
+- Ammonium Sulfate (AMS)
+- Liquid Phosphate 10-34-0 when a value is available
+
+The FertilizerPrice observations use `USD/short ton`, which keeps them distinct from the older Urea series already in the repository.
+
+Source pages:
+
+- https://fertilizerprice.com/trends
+- https://fertilizerprice.com/news
+
+## Weekly fertilizer update
+
+Once per week, open FertilizerPrice.com and enter the newest national averages manually:
+
+```bash
+git pull
+python3 add_fertilizer_prices.py
+```
+
+The script asks for the report date and each fertilizer price. Press Enter to skip any product that is not reported that week. If the same product/date already exists, the new value replaces it instead of creating a duplicate.
+
+After the script saves the CSV, push the new data:
+
+```bash
+git add data/fertilizerprice_history.csv
+git commit -m "data: update fertilizer prices YYYY-MM-DD"
+git push
+```
+
+Streamlit Cloud can then redeploy from the updated repository and the new weekly point will appear in the same commodity dashboard.
+
+## Existing daily Urea/Sulfur workflow
+
+From the repository on the `main` branch:
 
 ```bash
 git pull
 python3 add_today_prices.py
 ```
 
-Then enter the date, Urea price, and Sulfur price.
+Enter the date, Urea price, and Sulfur price. That script automatically updates:
 
-Example:
+- `data/commodity_prices.xlsx`
+- `data/latest_prices.xlsx`
 
-```text
-Date [2026-09-20]:
-Urea price (USD/T): 459.60
-Sulfur price (CNY/T): 7669
-```
+and then commits and pushes those two files to `main`.
 
-After you enter the prices, the script automatically:
-
-1. updates `data/commodity_prices.xlsx` with the full manual history
-2. updates `data/latest_prices.xlsx` with the latest entered prices
-3. commits only those two price files
-4. rebases automatically if GitHub `main` changed
-5. pushes the new price data to GitHub `main`
-6. triggers Streamlit Cloud to redeploy from the updated GitHub repository
-
-You do **not** need to run `git add`, `git commit`, `git push`, or another `git pull` after entering the prices.
-
-The workflow is therefore:
-
-```text
-git pull
-   ↓
-python3 add_today_prices.py
-   ↓
-enter Urea + Sulfur prices
-   ↓
-Excel files update automatically
-   ↓
-GitHub main updates automatically
-   ↓
-Streamlit Cloud redeploys automatically
-   ↓
-Dashboard shows the newest date and prices
-```
-
-When the script finishes successfully, look for:
-
-```text
-GitHub sync: pushed to main successfully.
-Streamlit Cloud will redeploy from the new GitHub data automatically.
-```
-
-If the same date is entered again, that date's manual values are replaced instead of duplicated.
-
-The dashboard gives manual price data priority over the older backup CSV/XLSX files for the same commodity/date/unit. This means the newest manually entered date and price are used throughout the dashboard, including:
-
-- Latest Price KPI
-- Previous Price KPI
-- Current Month Average
-- Current Month High / Low
-- Current Month chart
-- Latest observation date
-- Data tables
-
-After the GitHub push, Streamlit Cloud may need a short time to redeploy. Refresh the deployed dashboard after the redeploy completes.
-
-## Pull the latest code manually
-
-If you ever need to make sure your local copy has the newest code:
-
-```bash
-git switch main
-git pull origin main
-```
+If the same date is entered again, that date's manual values are replaced rather than duplicated.
 
 ## Run Streamlit locally
 
@@ -100,13 +86,18 @@ Local URL:
 http://localhost:8501
 ```
 
-## Normal daily routine
+## Normal routines
 
-Most days, use only:
+For the existing daily Urea/Sulfur series:
 
 ```bash
 git pull
 python3 add_today_prices.py
 ```
 
-That is the complete daily workflow.
+For the fertilizer report, normally once per week:
+
+```bash
+git pull
+python3 add_fertilizer_prices.py
+```
