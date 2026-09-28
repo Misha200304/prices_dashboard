@@ -6,9 +6,19 @@ import subprocess
 
 import pandas as pd
 
+from fertilizer_data import (
+    FERTILIZER_PRODUCTS,
+    REGIONS,
+    build_fertilizer_rows,
+    build_regional_rows,
+    update_csv_history,
+)
+
 DATA_DIR = Path("data")
 MASTER_FILE = DATA_DIR / "commodity_prices.xlsx"
 LATEST_FILE = DATA_DIR / "latest_prices.xlsx"
+FERTILIZER_FILE = DATA_DIR / "fertilizer_prices.csv"
+REGIONAL_FILE = Path("regional_data/fertilizer_regional_prices.csv")
 
 
 def build_daily_rows(
@@ -82,6 +92,29 @@ def update_excel_files(
     return combined
 
 
+def update_fertilizer_files(
+    price_date: str,
+    national_prices: dict[str, float | None],
+    regional_prices: dict[str, dict[str, float | None]] | None = None,
+    national_path: str | Path = FERTILIZER_FILE,
+    regional_path: str | Path = REGIONAL_FILE,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    national_rows = build_fertilizer_rows(price_date, national_prices)
+    national_history = update_csv_history(
+        national_rows,
+        national_path,
+        ["Commodity", "Date", "Unit"],
+    )
+
+    regional_rows = build_regional_rows(price_date, regional_prices or {})
+    regional_history = update_csv_history(
+        regional_rows,
+        regional_path,
+        ["Commodity", "Region", "Date", "Unit"],
+    )
+    return national_history, regional_history
+
+
 def _run_git(
     repo_root: Path,
     *args: str,
@@ -109,8 +142,13 @@ def sync_price_files_to_git(
         if repo_root is not None
         else Path(__file__).resolve().parent
     )
-    master = Path("data/commodity_prices.xlsx")
-    latest = Path("data/latest_prices.xlsx")
+    tracked_paths = [
+        Path("data/commodity_prices.xlsx"),
+        Path("data/latest_prices.xlsx"),
+        Path("data/fertilizer_prices.csv"),
+        Path("regional_data/fertilizer_regional_prices.csv"),
+    ]
+    tracked_paths = [path for path in tracked_paths if (root / path).exists()]
 
     current_branch = _run_git(
         root, "rev-parse", "--abbrev-ref", "HEAD"
@@ -120,15 +158,17 @@ def sync_price_files_to_git(
             f"Price sync must run from branch '{branch}', but current branch is '{current_branch}'."
         )
 
-    _run_git(root, "add", "--", str(master), str(latest))
+    if not tracked_paths:
+        return False
+
+    _run_git(root, "add", "--", *[str(path) for path in tracked_paths])
     diff = _run_git(
         root,
         "diff",
         "--cached",
         "--quiet",
         "--",
-        str(master),
-        str(latest),
+        *[str(path) for path in tracked_paths],
         check=False,
     )
     if diff.returncode == 0:
@@ -137,7 +177,14 @@ def sync_price_files_to_git(
         raise RuntimeError("Could not determine whether the price files changed.")
 
     commit_message = message or f"data: update prices {date.today().isoformat()}"
-    _run_git(root, "commit", "-m", commit_message, "--", str(master), str(latest))
+    _run_git(
+        root,
+        "commit",
+        "-m",
+        commit_message,
+        "--",
+        *[str(path) for path in tracked_paths],
+    )
 
     push = _run_git(root, "push", "origin", branch, check=False)
     if push.returncode != 0:
@@ -176,6 +223,52 @@ def _ask_price(label: str) -> float:
         return value
 
 
+def _ask_optional_price(label: str) -> float | None:
+    while True:
+        raw = input(f"{label} [blank = skip]: ").strip()
+        if raw == "":
+            return None
+        try:
+            value = float(raw)
+        except ValueError:
+            print("Please enter a number or leave blank to skip.")
+            continue
+        if value <= 0:
+            print("Price must be greater than 0.")
+            continue
+        return value
+
+
+def _ask_yes_no(label: str, default: bool = False) -> bool:
+    suffix = "[Y/n]" if default else "[y/N]"
+    raw = input(f"{label} {suffix}: ").strip().lower()
+    if not raw:
+        return default
+    return raw in {"y", "yes"}
+
+
+def _collect_fertilizer_prices() -> dict[str, float | None]:
+    print("\nFertilizerPrice.com national averages (USD/short ton).")
+    print("Leave any value blank if it did not update or you do not have it.")
+    return {
+        product: _ask_optional_price(product)
+        for product in FERTILIZER_PRODUCTS
+    }
+
+
+def _collect_regional_prices() -> dict[str, dict[str, float | None]]:
+    result: dict[str, dict[str, float | None]] = {}
+    print("\nRegional observations are optional.")
+    for region in REGIONS:
+        if not _ask_yes_no(f"Enter prices for {region}?"):
+            continue
+        result[region] = {
+            product: _ask_optional_price(f"{region} - {product}")
+            for product in FERTILIZER_PRODUCTS
+        }
+    return result
+
+
 def main() -> None:
     today = date.today().isoformat()
     entered_date = input(f"Date [{today}]: ").strip() or today
@@ -191,11 +284,30 @@ def main() -> None:
     rows = build_daily_rows(entered_date, urea_price, sulfur_price)
     history = update_excel_files(rows)
 
+    fertilizer_history = None
+    regional_history = None
+    if _ask_yes_no("Update FertilizerPrice.com fertilizer prices too?", default=True):
+        national_prices = _collect_fertilizer_prices()
+        regional_prices = (
+            _collect_regional_prices()
+            if _ask_yes_no("Add/update regional fertilizer observations?")
+            else {}
+        )
+        fertilizer_history, regional_history = update_fertilizer_files(
+            entered_date,
+            national_prices,
+            regional_prices,
+        )
+
     print("\nSaved successfully.")
     print(f"Master history: {MASTER_FILE}")
     print(f"Today's output: {LATEST_FILE}")
     print(f"Total history rows: {len(history)}")
-    print("\nRows added/updated:")
+    if fertilizer_history is not None:
+        print(f"Fertilizer national history: {FERTILIZER_FILE} ({len(fertilizer_history)} rows)")
+    if regional_history is not None:
+        print(f"Fertilizer regional history: {REGIONAL_FILE} ({len(regional_history)} rows)")
+    print("\nUrea/Sulfur rows added/updated:")
     print(rows.to_string(index=False))
 
     try:
