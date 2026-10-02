@@ -126,7 +126,7 @@ with header_left:
     )
     st.markdown(
         '<div class="dashboard-subtitle">'
-        "Urea and sulfur market-price monitoring from repository data."
+        "Commodity and fertilizer market-price monitoring from repository data."
         "</div>",
         unsafe_allow_html=True,
     )
@@ -219,10 +219,17 @@ sources = sorted(
 )
 
 if len(sources) > 1:
+    preferred_source = "FertilizerPrice.com weekly report"
+    default_sources = (
+        [preferred_source]
+        if preferred_source in sources
+        else sources
+    )
+
     selected_sources = st.sidebar.multiselect(
         "Source",
         sources,
-        default=sources,
+        default=default_sources,
     )
 
     commodity_data = commodity_data.loc[
@@ -442,11 +449,50 @@ with overview_tab:
     if historical.empty:
         st.info("No observations exist in the selected historical range.")
     else:
-        chart_data = (
-            historical[["Date", "Price"]]
-            .drop_duplicates(subset=["Date"], keep="last")
-            .set_index("Date")
+        has_region_coverage = (
+            "Regions_Reported" in historical.columns
+            and historical["Regions_Reported"].notna().any()
         )
+
+        chart_columns = ["Date", "Price"]
+        if has_region_coverage:
+            chart_columns.append("Regions_Reported")
+
+        chart_frame = (
+            historical[chart_columns]
+            .drop_duplicates(subset=["Date"], keep="last")
+            .sort_values("Date")
+            .reset_index(drop=True)
+        )
+
+        if has_region_coverage:
+            chart_frame["3-report median"] = (
+                chart_frame["Price"]
+                .rolling(window=3, min_periods=1)
+                .median()
+            )
+
+            chart_data = (
+                chart_frame[["Date", "Price", "3-report median"]]
+                .rename(columns={"Price": "Reported price"})
+                .set_index("Date")
+            )
+
+            latest_regions = int(
+                chart_frame["Regions_Reported"].dropna().iloc[-1]
+            )
+
+            st.caption(
+                "Reported price = FertilizerPrice.com national average for that "
+                "report date. The 3-report median is shown as a trend aid because "
+                "the number of reporting regions changes between reports. "
+                f"Latest observation uses {latest_regions} reporting region(s)."
+            )
+        else:
+            chart_data = (
+                chart_frame[["Date", "Price"]]
+                .set_index("Date")
+            )
 
         st.line_chart(
             chart_data,
@@ -641,6 +687,9 @@ with data_tab:
             "Unit",
             "Source",
             "Retrieved_At",
+            "Regions_Reported",
+            "Series",
+            "Source_URL",
             "Year",
             "Month",
         ]
@@ -665,6 +714,14 @@ with data_tab:
             "Price": st.column_config.NumberColumn(
                 "Price",
                 format="%.2f",
+            ),
+            "Regions_Reported": st.column_config.NumberColumn(
+                "Regions",
+                format="%d",
+            ),
+            "Source_URL": st.column_config.LinkColumn(
+                "Source report",
+                display_text="Open report",
             ),
         },
     )
