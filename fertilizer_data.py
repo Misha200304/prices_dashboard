@@ -9,6 +9,7 @@ import pandas as pd
 FERTILIZER_PRODUCTS = [
     "Urea",
     "UAN 28%",
+    "UAN 32%",
     "Anhydrous Ammonia",
     "DAP",
     "MAP",
@@ -19,9 +20,12 @@ FERTILIZER_PRODUCTS = [
 
 REGIONS = [
     "Corn Belt",
+    "Northern Plains",
     "Southern Plains",
+    "Lake States",
     "Southeast",
     "Delta States",
+    "Appalachian",
     "Mountain",
     "Pacific",
     "Northeast",
