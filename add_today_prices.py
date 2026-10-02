@@ -286,7 +286,10 @@ def main() -> None:
 
     fertilizer_history = None
     regional_history = None
-    if _ask_yes_no("Update FertilizerPrice.com fertilizer prices too?", default=True):
+    if _ask_yes_no(
+        "Manually override verified FertilizerPrice.com fertilizer prices?",
+        default=False,
+    ):
         national_prices = _collect_fertilizer_prices()
         regional_prices = (
             _collect_regional_prices()

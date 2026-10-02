@@ -1,153 +1,118 @@
-Date,Commodity,Price,Unit,Source,Retrieved_At
-2026-03-27,Urea,640,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-03-27,DAP,871.67,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-03-27,Potash (MOP),466.67,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-03-27,Ammonium Sulfate (AMS),475,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-03,Urea,788.82,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-03,UAN 28%,530.06,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-03,Anhydrous Ammonia,983.25,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-03,DAP,859.19,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-03,MAP,947.96,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-03,Potash (MOP),557.56,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-03,Ammonium Sulfate (AMS),559.85,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-04,Urea,835,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-04,DAP,895,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-04,Potash (MOP),550,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-10,Urea,775,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-10,UAN 28%,591,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-10,DAP,901.96,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-10,Potash (MOP),530.6,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-17,Urea,869.54,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-17,UAN 28%,537.55,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-17,Anhydrous Ammonia,1037.42,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-17,DAP,719.15,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-17,MAP,951.14,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-17,Potash (MOP),544.81,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-17,Ammonium Sulfate (AMS),543.42,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-24,Urea,775,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-24,UAN 28%,607.67,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-24,DAP,920.29,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-24,Potash (MOP),530.6,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-04-24,Ammonium Sulfate (AMS),475,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-01,Urea,881.73,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-01,UAN 28%,553.15,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-01,Anhydrous Ammonia,1038.17,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-01,DAP,725.99,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-01,MAP,979.36,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-01,Potash (MOP),563.39,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-01,Ammonium Sulfate (AMS),574.46,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-08,Urea,775,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-08,UAN 28%,607.67,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-08,DAP,920.29,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-08,Potash (MOP),530.6,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-15,Urea,885.01,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-15,UAN 28%,562.06,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-15,Anhydrous Ammonia,1046.92,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-15,DAP,725.99,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-15,MAP,981.6,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-15,Potash (MOP),545.06,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-15,Ammonium Sulfate (AMS),556.27,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-22,Urea,775,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-22,UAN 28%,607.67,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-22,DAP,920.29,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-22,Potash (MOP),530.6,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-29,Urea,902.35,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-29,UAN 28%,561.73,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-29,Anhydrous Ammonia,1065.75,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-29,DAP,730.57,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-29,MAP,1002.93,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-29,Potash (MOP),564.98,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-05-29,Ammonium Sulfate (AMS),575.57,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-05,Urea,775,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-05,UAN 28%,607.67,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-05,DAP,920.29,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-05,Potash (MOP),530.6,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-12,Urea,820.96,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-12,UAN 28%,560.73,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-12,Anhydrous Ammonia,1043,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-12,DAP,730.57,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-12,MAP,982.03,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-12,Potash (MOP),544.76,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-12,Ammonium Sulfate (AMS),560.77,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-19,Urea,775,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-19,UAN 28%,607.67,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-19,DAP,920.29,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-19,Potash (MOP),530.6,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-26,Urea,748.76,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-26,UAN 28%,543.2,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-26,Anhydrous Ammonia,1016.75,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-26,DAP,737.21,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-26,MAP,992.24,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-26,Potash (MOP),547.03,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-06-26,Ammonium Sulfate (AMS),406.01,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-03,Urea,883,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-03,MAP,1083.17,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-03,Potash (MOP),664,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-03,Ammonium Sulfate (AMS),687.33,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-10,Urea,794.4,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-10,UAN 28%,546.2,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-10,Anhydrous Ammonia,1016.75,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-10,DAP,747.21,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-10,MAP,994.34,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-10,Potash (MOP),548.15,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-10,Ammonium Sulfate (AMS),584.5,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-17,Urea,730,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-17,UAN 28%,600,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-17,DAP,956.83,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-17,Potash (MOP),529.2,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-24,Urea,786.02,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-24,UAN 28%,534.39,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-24,Anhydrous Ammonia,976.4,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-24,DAP,747.9,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-24,MAP,1003.27,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-24,Potash (MOP),548.26,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-24,Ammonium Sulfate (AMS),584.5,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-31,Urea,806.5,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-31,UAN 28%,600,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-31,DAP,956.83,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-31,MAP,1083.17,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-31,Potash (MOP),599.6,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-07-31,Ammonium Sulfate (AMS),581.17,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-07,Urea,784.73,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-07,UAN 28%,526.5,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-07,Anhydrous Ammonia,852.5,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-07,DAP,755.26,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-07,MAP,1000.53,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-07,Potash (MOP),549.02,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-07,Ammonium Sulfate (AMS),583,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-14,Urea,730,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-14,UAN 28%,600,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-14,Anhydrous Ammonia,805,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-14,DAP,956.83,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-14,Potash (MOP),535.2,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-21,Urea,765.68,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-21,UAN 28%,509.19,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-21,Anhydrous Ammonia,859.5,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-21,DAP,756.51,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-21,MAP,1003.78,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-21,Potash (MOP),548.99,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-21,Ammonium Sulfate (AMS),589.25,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-27,Potash (MOP),485,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-28,Urea,730,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-28,UAN 28%,600,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-28,DAP,956.83,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-28,Potash (MOP),535.2,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-08-28,Ammonium Sulfate (AMS),475,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-04,Urea,783.51,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-04,UAN 28%,503.63,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-04,Anhydrous Ammonia,858.25,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-04,DAP,757.49,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-04,MAP,1027.82,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-04,Potash (MOP),568.05,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-04,Ammonium Sulfate (AMS),605.2,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-11,Urea,730,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-11,UAN 28%,600,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-11,DAP,956.83,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-11,Potash (MOP),535.2,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-18,Urea,907.8,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-18,UAN 28%,600,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-18,Anhydrous Ammonia,768,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-18,DAP,956.83,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-18,MAP,1092.84,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-18,Potash (MOP),582.04,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
-2026-09-18,Ammonium Sulfate (AMS),770.2,USD/short ton,FertilizerPrice.com,2026-09-28T18:45:00
+Date,Commodity,Price,Unit,Source,Regions_Reported,Series,Source_URL,Retrieved_At
+2026-04-03,Urea,788.82,USD/short ton,FertilizerPrice.com weekly report,6,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-03,2026-10-02T16:00:00-04:00
+2026-04-03,UAN 28%,530.06,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-03,2026-10-02T16:00:00-04:00
+2026-04-03,UAN 32%,480.26,USD/short ton,FertilizerPrice.com weekly report,5,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-03,2026-10-02T16:00:00-04:00
+2026-04-03,Anhydrous Ammonia,983.25,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-03,2026-10-02T16:00:00-04:00
+2026-04-03,DAP,859.19,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-03,2026-10-02T16:00:00-04:00
+2026-04-03,MAP,947.96,USD/short ton,FertilizerPrice.com weekly report,5,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-03,2026-10-02T16:00:00-04:00
+2026-04-03,Potash (MOP),557.56,USD/short ton,FertilizerPrice.com weekly report,6,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-03,2026-10-02T16:00:00-04:00
+2026-04-03,Ammonium Sulfate (AMS),559.85,USD/short ton,FertilizerPrice.com weekly report,6,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-03,2026-10-02T16:00:00-04:00
+2026-04-17,Urea,838.75,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-17,2026-10-02T16:00:00-04:00
+2026-04-17,UAN 28%,565.66,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-17,2026-10-02T16:00:00-04:00
+2026-04-17,UAN 32%,575.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-17,2026-10-02T16:00:00-04:00
+2026-04-17,Anhydrous Ammonia,1123.50,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-17,2026-10-02T16:00:00-04:00
+2026-04-17,DAP,888.26,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-17,2026-10-02T16:00:00-04:00
+2026-04-17,MAP,894.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-17,2026-10-02T16:00:00-04:00
+2026-04-17,Potash (MOP),517.80,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-17,2026-10-02T16:00:00-04:00
+2026-04-17,Ammonium Sulfate (AMS),550.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-04-17,2026-10-02T16:00:00-04:00
+2026-05-01,Urea,874.80,USD/short ton,FertilizerPrice.com weekly report,5,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-01,2026-10-02T16:00:00-04:00
+2026-05-01,UAN 28%,553.15,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-01,2026-10-02T16:00:00-04:00
+2026-05-01,UAN 32%,485.97,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-01,2026-10-02T16:00:00-04:00
+2026-05-01,Anhydrous Ammonia,1038.17,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-01,2026-10-02T16:00:00-04:00
+2026-05-01,DAP,689.10,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-01,2026-10-02T16:00:00-04:00
+2026-05-01,MAP,987.31,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-01,2026-10-02T16:00:00-04:00
+2026-05-01,Potash (MOP),581.27,USD/short ton,FertilizerPrice.com weekly report,5,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-01,2026-10-02T16:00:00-04:00
+2026-05-01,Ammonium Sulfate (AMS),580.44,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-01,2026-10-02T16:00:00-04:00
+2026-05-15,Urea,885.01,USD/short ton,FertilizerPrice.com weekly report,5,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-15,2026-10-02T16:00:00-04:00
+2026-05-15,UAN 28%,562.06,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-15,2026-10-02T16:00:00-04:00
+2026-05-15,UAN 32%,471.04,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-15,2026-10-02T16:00:00-04:00
+2026-05-15,Anhydrous Ammonia,1046.92,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-15,2026-10-02T16:00:00-04:00
+2026-05-15,DAP,725.99,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-15,2026-10-02T16:00:00-04:00
+2026-05-15,MAP,981.60,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-15,2026-10-02T16:00:00-04:00
+2026-05-15,Potash (MOP),545.06,USD/short ton,FertilizerPrice.com weekly report,5,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-15,2026-10-02T16:00:00-04:00
+2026-05-15,Ammonium Sulfate (AMS),562.69,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-15,2026-10-02T16:00:00-04:00
+2026-05-29,Urea,921.25,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-29,2026-10-02T16:00:00-04:00
+2026-05-29,UAN 28%,584.39,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-29,2026-10-02T16:00:00-04:00
+2026-05-29,UAN 32%,450.83,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-29,2026-10-02T16:00:00-04:00
+2026-05-29,Anhydrous Ammonia,1133.50,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-29,2026-10-02T16:00:00-04:00
+2026-05-29,DAP,895.15,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-29,2026-10-02T16:00:00-04:00
+2026-05-29,MAP,1017.06,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-29,2026-10-02T16:00:00-04:00
+2026-05-29,Potash (MOP),564.53,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-29,2026-10-02T16:00:00-04:00
+2026-05-29,Ammonium Sulfate (AMS),590.61,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-05-29,2026-10-02T16:00:00-04:00
+2026-06-12,Urea,777.34,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-12,2026-10-02T16:00:00-04:00
+2026-06-12,UAN 28%,584.39,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-12,2026-10-02T16:00:00-04:00
+2026-06-12,UAN 32%,583.40,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-12,2026-10-02T16:00:00-04:00
+2026-06-12,Anhydrous Ammonia,1088.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-12,2026-10-02T16:00:00-04:00
+2026-06-12,DAP,895.15,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-12,2026-10-02T16:00:00-04:00
+2026-06-12,MAP,918.33,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-12,2026-10-02T16:00:00-04:00
+2026-06-12,Potash (MOP),511.95,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-12,2026-10-02T16:00:00-04:00
+2026-06-26,Urea,685.00,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-26,2026-10-02T16:00:00-04:00
+2026-06-26,UAN 28%,570.50,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-26,2026-10-02T16:00:00-04:00
+2026-06-26,UAN 32%,605.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-26,2026-10-02T16:00:00-04:00
+2026-06-26,Anhydrous Ammonia,1057.50,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-26,2026-10-02T16:00:00-04:00
+2026-06-26,DAP,908.42,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-26,2026-10-02T16:00:00-04:00
+2026-06-26,MAP,905.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-26,2026-10-02T16:00:00-04:00
+2026-06-26,Potash (MOP),515.09,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-26,2026-10-02T16:00:00-04:00
+2026-06-26,Ammonium Sulfate (AMS),475.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-06-26,2026-10-02T16:00:00-04:00
+2026-07-10,Urea,821.33,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-10,2026-10-02T16:00:00-04:00
+2026-07-10,UAN 28%,575.00,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-10,2026-10-02T16:00:00-04:00
+2026-07-10,UAN 32%,685.18,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-10,2026-10-02T16:00:00-04:00
+2026-07-10,Anhydrous Ammonia,1057.50,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-10,2026-10-02T16:00:00-04:00
+2026-07-10,DAP,903.94,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-10,2026-10-02T16:00:00-04:00
+2026-07-10,MAP,1011.49,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-10,2026-10-02T16:00:00-04:00
+2026-07-10,Potash (MOP),562.49,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-10,2026-10-02T16:00:00-04:00
+2026-07-10,Ammonium Sulfate (AMS),688.00,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-10,2026-10-02T16:00:00-04:00
+2026-07-24,Urea,709.10,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-24,2026-10-02T16:00:00-04:00
+2026-07-24,UAN 28%,534.39,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-24,2026-10-02T16:00:00-04:00
+2026-07-24,UAN 32%,556.02,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-24,2026-10-02T16:00:00-04:00
+2026-07-24,Anhydrous Ammonia,976.40,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-24,2026-10-02T16:00:00-04:00
+2026-07-24,DAP,705.54,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-24,2026-10-02T16:00:00-04:00
+2026-07-24,MAP,941.80,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-24,2026-10-02T16:00:00-04:00
+2026-07-24,Potash (MOP),506.71,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-24,2026-10-02T16:00:00-04:00
+2026-07-24,Ammonium Sulfate (AMS),425.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-24,2026-10-02T16:00:00-04:00
+2026-07-31,Urea,806.50,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-31,2026-10-02T16:00:00-04:00
+2026-07-31,UAN 28%,600.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-31,2026-10-02T16:00:00-04:00
+2026-07-31,UAN 32%,776.67,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-31,2026-10-02T16:00:00-04:00
+2026-07-31,DAP,956.83,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-31,2026-10-02T16:00:00-04:00
+2026-07-31,MAP,1083.17,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-31,2026-10-02T16:00:00-04:00
+2026-07-31,Potash (MOP),599.60,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-31,2026-10-02T16:00:00-04:00
+2026-07-31,Ammonium Sulfate (AMS),581.17,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-07-31,2026-10-02T16:00:00-04:00
+2026-08-07,Urea,711.94,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-07,2026-10-02T16:00:00-04:00
+2026-08-07,UAN 28%,526.50,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-07,2026-10-02T16:00:00-04:00
+2026-08-07,UAN 32%,570.50,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-07,2026-10-02T16:00:00-04:00
+2026-08-07,Anhydrous Ammonia,852.50,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-07,2026-10-02T16:00:00-04:00
+2026-08-07,DAP,715.35,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-07,2026-10-02T16:00:00-04:00
+2026-08-07,MAP,931.82,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-07,2026-10-02T16:00:00-04:00
+2026-08-07,Potash (MOP),508.11,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-07,2026-10-02T16:00:00-04:00
+2026-08-07,Ammonium Sulfate (AMS),425.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-07,2026-10-02T16:00:00-04:00
+2026-08-21,Urea,726.00,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-21,2026-10-02T16:00:00-04:00
+2026-08-21,UAN 28%,555.84,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-21,2026-10-02T16:00:00-04:00
+2026-08-21,UAN 32%,605.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-21,2026-10-02T16:00:00-04:00
+2026-08-21,Anhydrous Ammonia,890.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-21,2026-10-02T16:00:00-04:00
+2026-08-21,DAP,937.03,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-21,2026-10-02T16:00:00-04:00
+2026-08-21,MAP,935.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-21,2026-10-02T16:00:00-04:00
+2026-08-21,Potash (MOP),517.39,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-08-21,2026-10-02T16:00:00-04:00
+2026-09-04,Urea,857.21,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-04,2026-10-02T16:00:00-04:00
+2026-09-04,UAN 28%,547.50,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-04,2026-10-02T16:00:00-04:00
+2026-09-04,UAN 32%,707.91,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-04,2026-10-02T16:00:00-04:00
+2026-09-04,Anhydrous Ammonia,892.50,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-04,2026-10-02T16:00:00-04:00
+2026-09-04,DAP,938.97,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-04,2026-10-02T16:00:00-04:00
+2026-09-04,MAP,1086.82,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-04,2026-10-02T16:00:00-04:00
+2026-09-04,Potash (MOP),610.57,USD/short ton,FertilizerPrice.com weekly report,4,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-04,2026-10-02T16:00:00-04:00
+2026-09-04,Ammonium Sulfate (AMS),727.50,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-04,2026-10-02T16:00:00-04:00
+2026-09-18,Urea,907.80,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-18,2026-10-02T16:00:00-04:00
+2026-09-18,UAN 28%,600.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-18,2026-10-02T16:00:00-04:00
+2026-09-18,UAN 32%,598.53,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-18,2026-10-02T16:00:00-04:00
+2026-09-18,Anhydrous Ammonia,768.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-18,2026-10-02T16:00:00-04:00
+2026-09-18,DAP,956.83,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-18,2026-10-02T16:00:00-04:00
+2026-09-18,MAP,1092.84,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-18,2026-10-02T16:00:00-04:00
+2026-09-18,Potash (MOP),582.04,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-18,2026-10-02T16:00:00-04:00
+2026-09-18,Ammonium Sulfate (AMS),770.20,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-09-18,2026-10-02T16:00:00-04:00
+2026-10-02,Urea,796.25,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-10-02,2026-10-02T16:00:00-04:00
+2026-10-02,UAN 28%,533.34,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-10-02,2026-10-02T16:00:00-04:00
+2026-10-02,UAN 32%,645.00,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-10-02,2026-10-02T16:00:00-04:00
+2026-10-02,Anhydrous Ammonia,945.00,USD/short ton,FertilizerPrice.com weekly report,1,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-10-02,2026-10-02T16:00:00-04:00
+2026-10-02,DAP,945.56,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-10-02,2026-10-02T16:00:00-04:00
+2026-10-02,MAP,978.00,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-10-02,2026-10-02T16:00:00-04:00
+2026-10-02,Potash (MOP),571.35,USD/short ton,FertilizerPrice.com weekly report,3,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-10-02,2026-10-02T16:00:00-04:00
+2026-10-02,Ammonium Sulfate (AMS),573.50,USD/short ton,FertilizerPrice.com weekly report,2,reported_national,https://fertilizerprice.com/news/fertilizer-prices-week-2026-10-02,2026-10-02T16:00:00-04:00

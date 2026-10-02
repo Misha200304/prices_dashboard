@@ -44,6 +44,7 @@ def test_product_and_region_lists_cover_dashboard_options():
     assert FERTILIZER_PRODUCTS == [
         "Urea",
         "UAN 28%",
+        "UAN 32%",
         "Anhydrous Ammonia",
         "DAP",
         "MAP",
@@ -51,5 +52,9 @@ def test_product_and_region_lists_cover_dashboard_options():
         "Ammonium Sulfate (AMS)",
         "Liquid Phosphate 10-34-0",
     ]
+    assert len(REGIONS) == 10
     assert "Corn Belt" in REGIONS
+    assert "Northern Plains" in REGIONS
+    assert "Lake States" in REGIONS
+    assert "Appalachian" in REGIONS
     assert "Northeast" in REGIONS

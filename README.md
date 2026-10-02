@@ -34,6 +34,48 @@ These are intentionally kept separate so prices with different units are never m
 
 ---
 
+# Verified fertilizer history
+
+The national fertilizer history is now built from FertilizerPrice.com public weekly market-report pages rather than copying values from the interactive Trends chart.
+
+The verified dataset is stored in:
+
+```text
+data/fertilizer_prices.csv
+```
+
+Each row can include:
+
+- `Regions_Reported` — number of regions behind that national observation
+- `Series` — currently `reported_national`
+- `Source_URL` — the exact weekly report used for the observation
+
+The previous Trends export is preserved for audit purposes in:
+
+```text
+archive/fertilizer_prices_legacy_2026-10-02.csv
+```
+
+To rebuild or refresh the verified history manually:
+
+```bash
+python3 backfill_fertilizer_history.py --full
+```
+
+For normal updates, run:
+
+```bash
+python3 backfill_fertilizer_history.py
+```
+
+The normal update only rechecks the recent reporting window and appends/replaces verified report observations. Missing Fridays are left missing; the script does not invent or forward-fill prices.
+
+A GitHub Actions workflow also checks for new public weekly reports every Friday and commits new observations when available.
+
+The dashboard displays the reported national price together with a 3-report rolling median when regional coverage metadata is available. The rolling median is a visual trend aid only; the raw reported observations remain visible.
+
+---
+
 # Quick start
 
 If the repository is already cloned on your computer, go into the project folder and make sure you are on the newest `main` branch:
@@ -120,15 +162,17 @@ If you enter the same date again, the previous value for that commodity/date/uni
 
 # Step 2 — Update national fertilizer prices
 
-After Urea and Sulfur, the script asks whether you want to update FertilizerPrice.com fertilizer prices.
+After Urea and Sulfur, the script can optionally make a **manual override** to FertilizerPrice.com fertilizer prices.
+
+The verified fertilizer history is maintained by `backfill_fertilizer_history.py`, so the manual override now defaults to **No**.
 
 You will see something similar to:
 
 ```text
-Update FertilizerPrice.com fertilizer prices too? [Y/n]:
+Manually override verified FertilizerPrice.com fertilizer prices? [y/N]:
 ```
 
-Press **Enter** or type `y` to continue.
+Normally press **Enter** to skip it. Type `y` only when you intentionally need to correct or enter a source value manually.
 
 The script then asks for the national average price for each supported fertilizer:
 
