@@ -162,15 +162,17 @@ If you enter the same date again, the previous value for that commodity/date/uni
 
 # Step 2 — Update national fertilizer prices
 
-After Urea and Sulfur, the script asks whether you want to update FertilizerPrice.com fertilizer prices.
+After Urea and Sulfur, the script can optionally make a **manual override** to FertilizerPrice.com fertilizer prices.
+
+The verified fertilizer history is maintained by `backfill_fertilizer_history.py`, so the manual override now defaults to **No**.
 
 You will see something similar to:
 
 ```text
-Update FertilizerPrice.com fertilizer prices too? [Y/n]:
+Manually override verified FertilizerPrice.com fertilizer prices? [y/N]:
 ```
 
-Press **Enter** or type `y` to continue.
+Normally press **Enter** to skip it. Type `y` only when you intentionally need to correct or enter a source value manually.
 
 The script then asks for the national average price for each supported fertilizer:
 
