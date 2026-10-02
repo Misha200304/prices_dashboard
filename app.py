@@ -542,7 +542,7 @@ with month_tab:
 
     st.markdown(
         '<div class="section-description">'
-        "Daily price observations during the latest available month."
+        "Price observations during the latest available month."
         "</div>",
         unsafe_allow_html=True,
     )
@@ -649,11 +649,11 @@ with month_tab:
                     format="%.2f",
                 ),
                 "Change": st.column_config.NumberColumn(
-                    "Daily Change",
+                    "Change",
                     format="%+.2f",
                 ),
                 "Change %": st.column_config.NumberColumn(
-                    "Daily Change %",
+                    "Change %",
                     format="%+.2f%%",
                 ),
             },
