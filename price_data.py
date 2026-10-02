@@ -13,8 +13,13 @@ CANONICAL_COLUMNS = [
     "Retrieved_At",
 ]
 
+METADATA_COLUMNS = [
+    "Regions_Reported",
+    "Series",
+    "Source_URL",
+]
 DERIVED_COLUMNS = ["Year", "Month", "Month_Start"]
-ALL_COLUMNS = CANONICAL_COLUMNS + DERIVED_COLUMNS
+ALL_COLUMNS = CANONICAL_COLUMNS + METADATA_COLUMNS + DERIVED_COLUMNS
 
 
 def empty_prices() -> pd.DataFrame:
@@ -42,9 +47,13 @@ def normalize_prices(df: pd.DataFrame) -> pd.DataFrame:
         raise ValueError("Input must contain Price")
     work["Price"] = pd.to_numeric(work["Price"], errors="coerce")
 
-    for column in ["Commodity", "Unit", "Source", "Retrieved_At"]:
+    for column in ["Commodity", "Unit", "Source", "Retrieved_At", *METADATA_COLUMNS]:
         if column not in work.columns:
             work[column] = pd.NA
+
+    work["Regions_Reported"] = pd.to_numeric(
+        work["Regions_Reported"], errors="coerce"
+    ).astype("Int64")
 
     work = work.dropna(subset=["Date", "Commodity", "Price", "Unit"]).copy()
     work["Commodity"] = work["Commodity"].astype(str).str.strip()
