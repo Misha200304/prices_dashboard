@@ -4,6 +4,7 @@ from datetime import datetime
 from html import escape
 
 import pandas as pd
+import requests
 import streamlit as st
 
 from price_data import load_repository_data
@@ -110,6 +111,18 @@ def load_data() -> pd.DataFrame:
     return load_repository_data("data")
 
 
+@st.cache_data(ttl=21600)
+def load_cny_usd_rate() -> tuple[float, str]:
+    response = requests.get(
+        "https://api.frankfurter.dev/v2/rate/cny/usd",
+        params={"providers": "cfets"},
+        timeout=10,
+    )
+    response.raise_for_status()
+    payload = response.json()
+    return float(payload["rate"]), str(payload["date"])
+
+
 prices = load_data()
 
 
@@ -195,19 +208,50 @@ if not units:
     st.error("No valid units exist for this commodity.")
     st.stop()
 
-unit = (
-    st.sidebar.selectbox("Unit", units)
-    if len(units) > 1
-    else units[0]
+is_sulfur_cny = (
+    str(commodity).strip().lower() == "sulfur"
+    and "CNY/T" in units
 )
+
+if is_sulfur_cny:
+    unit = st.sidebar.selectbox(
+        "Unit",
+        ["CNY/T", "USD/T"],
+    )
+    source_unit = "CNY/T"
+else:
+    unit = (
+        st.sidebar.selectbox("Unit", units)
+        if len(units) > 1
+        else units[0]
+    )
+    source_unit = unit
 
 commodity_data = (
     commodity_data.loc[
-        commodity_data["Unit"].astype(str) == unit
+        commodity_data["Unit"].astype(str) == source_unit
     ]
     .copy()
     .sort_values("Date")
 )
+
+if is_sulfur_cny and unit == "USD/T":
+    try:
+        cny_usd_rate, fx_rate_date = load_cny_usd_rate()
+    except (requests.RequestException, KeyError, TypeError, ValueError):
+        st.error(
+            "Unable to load the CNY → USD exchange rate right now. "
+            "Please use CNY/T or try USD/T again later."
+        )
+        st.stop()
+
+    commodity_data["Price"] = commodity_data["Price"] * cny_usd_rate
+    commodity_data["Unit"] = "USD/T"
+
+    st.sidebar.caption(
+        f"FX rate: 1 CNY = {cny_usd_rate:.6f} USD "
+        f"• CFETS • {fx_rate_date}"
+    )
 
 
 # Source filter
